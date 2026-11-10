@@ -3,8 +3,8 @@ require_once __DIR__ . "/../../repositories/product-repository.php";
 
 session_start();
 
-$errors = $_SESSION['errors'] ?? [];
-$old = $_SESSION['old'] ?? [];
+$errors = $_SESSION['errors'] ?? '';
+$old = $_SESSION['old'] ?? '';
 unset($_SESSION['errors'], $_SESSION['old']);
 ?>
 
@@ -29,15 +29,15 @@ unset($_SESSION['errors'], $_SESSION['old']);
       <ul>
          <li>
             <label for="">Kode Produk</label>
-            <input type="text" value="<?= $old['product_code'] ?>">
-            <?php if(!empty($errors['product_code'])):?>
+            <input type="text" value="<?= $old['product_code'] ?? '' ?>">
+            <?php if(isset($errors['product_code'])):?>
                <p><?= $errors['product_code'] ?></p>
             <?php endif;?>
          </li>
          <li>
             <label for="">Nama Produk</label>
-            <input type="text" value="<?= $old['product_name'] ?>">
-            <?php if(!empty($errors['product_name'])):?>
+            <input type="text" value="<?= $old['product_name'] ?? '' ?>">
+            <?php if(isset($errors['product_name'])):?>
                <p><?= $errors['product_name'] ?></p>
             <?php endif;?>
          </li>
@@ -50,7 +50,7 @@ unset($_SESSION['errors'], $_SESSION['old']);
                <option value="stationery">Stationery</option>
                <option value="uniform">Uniform</option>
             </select>
-            <?php if(!empty($errors['category'])):?>
+            <?php if(isset($errors['category'])):?>
                <p><?= $errors['category'] ?></p>
             <?php endif;?>
          </li>
@@ -62,32 +62,32 @@ unset($_SESSION['errors'], $_SESSION['old']);
                <option value="pack">Pack</option>
                <option value="bottle">Bottle</option>
             </select>
-            <?php if(!empty($errors['unit'])):?>
+            <?php if(isset($errors['unit'])):?>
                <p><?= $errors['unit'] ?></p>
             <?php endif;?>
          </li>
          <li>
             <label for="">Harga</label>
-            <input type="number" value="<?= $old['price'] ?>">
-            <?php if(!empty($errors['price'])):?>
+            <input type="number" value="<?= $old['price'] ?? '' ?>">
+            <?php if(isset($errors['price'])):?>
                <p><?= $errors['price'] ?></p>
             <?php endif;?>
          </li>
          <li>
             <label for="">Stok</label>
-            <input type="number" value="<?= $old['stock'] ?>">
-            <?php if(!empty($errors['stock'])):?>
+            <input type="number" value="<?= $old['stock'] ?? '' ?>">
+            <?php if(isset($errors['stock'])):?>
                <p><?= $errors['stock'] ?></p>
             <?php endif;?>
          </li>
          <li>
             <label for="">Tanggal Masuk</label>
-            <input type="date" value="<?= $old['entry_date'] ?>">
+            <input type="date" value="<?= $old['entry_date'] ?? '' ?>">
          </li>
          <li>
             <label for="">Deskripsi</label>
             <textarea name="description" id=""></textarea>
-            <?php if(!empty($errors['description'])):?>
+            <?php if(isset($errors['description'])):?>
                <p><?= $errors['description'] ?></p>
             <?php endif;?>
          </li>
