@@ -1,0 +1,175 @@
+@import url(management.css);
+
+:root {
+  --nav-white: white;
+  --background-color: #fff7c0;
+  --nav-green: green;
+  --title-green: rgb(0, 154, 0);
+  --nav-hover: rgb(0, 100, 0);
+  --auth-button: #0fa30f;
+  --auth-button-hover: rgb(0, 100, 0);
+}
+
+body {
+  margin: -2.25vh 0vw;
+  background-color: var(--background-color);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+nav {
+  background-color: var(--nav-green);
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 2vh 0vw;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: var(--nav-white);
+}
+
+nav ul a li {
+  list-style: none;
+}
+
+nav ul a.default-nav li {
+  padding: 1vh 1vw;
+}
+
+nav ul a.auth li {
+  background-color: var(--auth-button);
+  padding: 1vh 1vw;
+}
+
+nav ul a.default-nav:hover li {
+  background-color: var(--nav-hover);
+}
+
+nav ul a.auth:hover li {
+  background-color: var(--nav-hover);
+}
+
+h1.title {
+  font-size: 96px;
+  color: black;
+  margin: 0vh 1vw;
+  width: 50vw;
+}
+
+span.auth-button {
+  display: flex;
+  gap: 5vw;
+  position: relative;
+  left: 10vw;
+}
+
+span.auth-button a {
+  text-decoration: none;
+  color: white;
+  background-color: var(--auth-button);
+  padding: 1vh 2vw;
+}
+
+span.auth-button a:hover {
+  background-color: var(--nav-hover);
+}
+
+table{
+   border: 1px solid black;
+}
+
+tr th{
+   border-left: 1px solid black;
+   text-align: center;
+}
+
+.toolbar a{
+   margin: 1vh 1vw;
+   background-color: var(--auth-button);
+   padding: 1vh 1vw;
+   color: white;
+}
+
+.card{
+   display: flex;
+   justify-content: center;
+}
+
+form{
+   border: 1px solid black;
+   margin: 0vh 5vw;
+}
+
+form ul{
+   list-style: none;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 0;
+   gap: 2vh;
+   padding-bottom: 10vh;
+}
+
+form ul li{
+   display: flex;
+   flex-direction: column;
+   width: 80%;
+}
+
+form ul li input{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   height: 3vh;
+}
+
+form ul li select{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   height: 3vh;
+}
+
+form ul li textarea{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   height: 10vh;
+}
+
+.submit-cancel{
+   display: flex;
+   justify-content: space-evenly;
+   gap: 1vw;
+}
+
+.submit-cancel a{
+   padding: 2.5vh 5vw;
+   color: white;
+   background-color: red;
+}
+
+.submit-cancel button{
+   padding: 2.5vh 5vw;
+   color: white;
+   background-color: var(--auth-button);
+}
+
+
+
+
+
+.submit-cancel a:hover{
+   background-color: var(--auth-button-hover);
+}
+
+.submit-cancel button:hover{
+   background-color: var(--auth-button-hover);
+}
