@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . "/../../repositories/product-repository.php";
 
+session_start();
 $products  = getProducts();
 ?>
 
@@ -48,7 +49,7 @@ $products  = getProducts();
                   <td><?= $product['stock'] ?></td>
                   <td><?= $product['entry_date'] ?></td>
                   <td><?= $product['description'] ?></td>
-                  <td><a href="">Edit</a> <a href="">Hapus</a></td>
+                  <td><a href="edit.php?id=<?= $product['product_id'] ?>">Edit</a> <a href="">Hapus</a></td>
                </tr>
             <?php endforeach; ?>
 

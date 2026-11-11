@@ -3,8 +3,8 @@ require_once __DIR__ . "/../../repositories/product-repository.php";
 
 session_start();
 
-$errors = $_SESSION['errors'] ?? '';
-$old = $_SESSION['old'] ?? '';
+$errors = $_SESSION['errors'] ?? [];
+$old = $_SESSION['old'] ?? [];
 unset($_SESSION['errors'], $_SESSION['old']);
 ?>
 
@@ -29,14 +29,14 @@ unset($_SESSION['errors'], $_SESSION['old']);
       <ul>
          <li>
             <label for="">Kode Produk</label>
-            <input type="text" value="<?= $old['product_code'] ?? '' ?>">
+            <input name="product_code" type="text" value="<?= $old['product_code'] ?? '' ?>">
             <?php if(isset($errors['product_code'])):?>
                <p><?= $errors['product_code'] ?></p>
             <?php endif;?>
          </li>
          <li>
             <label for="">Nama Produk</label>
-            <input type="text" value="<?= $old['product_name'] ?? '' ?>">
+            <input name="product_name" type="text" value="<?= $old['product_name'] ?? '' ?>">
             <?php if(isset($errors['product_name'])):?>
                <p><?= $errors['product_name'] ?></p>
             <?php endif;?>
@@ -68,21 +68,21 @@ unset($_SESSION['errors'], $_SESSION['old']);
          </li>
          <li>
             <label for="">Harga</label>
-            <input type="number" value="<?= $old['price'] ?? '' ?>">
+            <input name="price" type="number" value="<?= $old['price'] ?? '' ?>">
             <?php if(isset($errors['price'])):?>
                <p><?= $errors['price'] ?></p>
             <?php endif;?>
          </li>
          <li>
             <label for="">Stok</label>
-            <input type="number" value="<?= $old['stock'] ?? '' ?>">
+            <input name="stock" type="number" value="<?= $old['stock'] ?? '' ?>">
             <?php if(isset($errors['stock'])):?>
                <p><?= $errors['stock'] ?></p>
             <?php endif;?>
          </li>
          <li>
             <label for="">Tanggal Masuk</label>
-            <input type="date" value="<?= $old['entry_date'] ?? '' ?>">
+            <input name="entry_date" type="date" value="<?= $old['entry_date'] ?? '' ?>">
          </li>
          <li>
             <label for="">Deskripsi</label>

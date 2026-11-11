@@ -19,17 +19,17 @@ function getProduct($id)
 {
    global $pdo;
 
-   $query = "select * from products where id = :id";
+   $query = "select * from products where product_id = :product_id";
 
    $stmt = $pdo->prepare($query);
    $stmt->execute([
-      "id" => $id
+      "product_id" => $id
    ]);
 
    $Product = $stmt->fetch();
 
 
-   if (!isset($Product)) {
+   if (!$Product) {
       header("Location: ../products/index.php");
       exit;
    }

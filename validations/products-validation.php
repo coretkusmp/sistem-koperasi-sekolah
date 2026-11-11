@@ -5,15 +5,15 @@ require_once __DIR__ . "/../repositories/product-repository.php";
 
 function getProductRequest($request){
    return [
-      "id" => $request['id'] ?? '', 
-      "product_code" => trim($request['product_code']),
-      "product_name" => trim($request['product_name']),
-      "category" => trim($request['category']),
-      "unit" => trim($request['unit']),
-      "price" => trim($request['price']),
-      "stock" => trim($request['stock']),
-      "entry_date" => trim($request['entry_date']),
-      "description" => trim($request['description']),
+      "product_id" => $request['product_id'] ?? 0, 
+      "product_code" => htmlspecialchars(trim($request['product_code'] ?? '')),
+      "product_name" => htmlspecialchars(trim($request['product_name'] ?? '')),
+      "category" => htmlspecialchars(trim($request['category'] ?? '')),
+      "unit" => htmlspecialchars(trim($request['unit'] ?? '')),
+      "price" => htmlspecialchars(trim($request['price'] ?? 0)),
+      "stock" => htmlspecialchars(trim($request['stock'] ?? 0)),
+      "entry_date" => htmlspecialchars(trim($request['entry_date'] ?? date('Y-m-d'))),
+      "description" => htmlspecialchars(trim($request['description'] ?? '')),
    ];
 }
 
