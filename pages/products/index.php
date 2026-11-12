@@ -1,10 +1,10 @@
 <?php
 require_once __DIR__ . "/../../repositories/product-repository.php";
 
+
 session_start();
 $products  = getProducts();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +20,7 @@ $products  = getProducts();
    <?php require_once __DIR__ . "/../../components/navbar.php" ?>
 
    <div class="toolbar">
-      <a href="create.php" class="btn btn-primary">+ Tambah Kategori</a>
+      <a href="create.php" class="btn btn-primary">+ Tambah Produk</a>
    </div>
 
    <div class="card">
@@ -49,10 +49,9 @@ $products  = getProducts();
                   <td><?= $product['stock'] ?></td>
                   <td><?= $product['entry_date'] ?></td>
                   <td><?= $product['description'] ?></td>
-                  <td><a href="edit.php?id=<?= $product['product_id'] ?>">Edit</a> <a href="">Hapus</a></td>
+                  <td><a href="edit.php?id=<?= $product['product_id'] ?>">Edit</a> <a href="/actions/products/destroy.php?id=<?= $product['product_id'] ?>">Hapus</a></td>
                </tr>
             <?php endforeach; ?>
-
 </body>
 
 </html>

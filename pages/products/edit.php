@@ -30,6 +30,8 @@ unset($_SESSION['errors'], $_SESSION['old']);
    <?php require_once __DIR__ . "/../../components/navbar.php" ?>
 
    <form method="post" action="/actions/products/update.php">
+   <input type="hidden" name="product_id" value="<?= $product_id; ?>">   
+
       <ul>
          <li>
             <label for="">Kode Produk</label>
@@ -48,7 +50,7 @@ unset($_SESSION['errors'], $_SESSION['old']);
          <li>
             <label for="">Kategori</label>
             <select name="category" id="">
-               <option value="<?= $product['category'] ?>"><?= $product['category'] ?></option>
+               <option value="<?= strtolower($product['category']) ?>"><?= $product['category'] ?></option>
                <option value="none">-</option>
                <option value="food">Food</option>
                <option value="drink">Drink</option>
@@ -62,7 +64,7 @@ unset($_SESSION['errors'], $_SESSION['old']);
          <li>
             <label for="">Unit</label>
             <select name="unit" id="" value="<?= $data['unit'] ?>">
-               <option value="<?= $product['unit'] ?>"><?= $product['unit'] ?></option>
+               <option value="<?= strtolower($product['unit']) ?>"><?= $product['unit'] ?></option>
                <option value="none">-</option>
                <option value="pcs">Pcs</option>
                <option value="pack">Pack</option>

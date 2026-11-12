@@ -173,3 +173,18 @@ form ul li textarea{
 .submit-cancel button:hover{
    background-color: var(--auth-button-hover);
 }
+
+.radio-buttons{
+   display: flex;
+   flex-direction: column;
+}
+
+.radio-buttons label{
+   display: flex;
+   width: 10vw;
+}
+
+.gender-radio-button{
+   display: flex;
+   width: 10vw;
+}
